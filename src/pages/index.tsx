@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Heading from "@theme/Heading";
-import { useMemo, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import styles from "./index.module.css";
@@ -10,9 +10,11 @@ import styles from "./index.module.css";
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
 
-  const title = useMemo(() => {
+  const [title, setTitle] = useState(siteConfig.title);
+
+  useEffect(() => {
     const is_xploora = location.origin.includes("xploora");
-    return is_xploora ? siteConfig.title.replace("Vas Hub", "Xploora") : siteConfig.title;
+    setTitle(is_xploora ? siteConfig.title.replace("Vas Hub", "Xploora") : siteConfig.title);
   }, []);
 
   return (
