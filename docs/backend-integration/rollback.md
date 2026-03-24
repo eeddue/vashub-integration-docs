@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Rollback
 
-This request is used to add a given amount to a player's wallet when a given game action that had deducted the same amount from the wallet, fails.
+This method rollbacks transaction with provider transaction ID.
 
 | path    | **`/rollback`** |
 | ------- | --------------- |
@@ -18,17 +18,17 @@ This request is used to add a given amount to a player's wallet when a given gam
 
 <Tabs>
   <TabItem value="parameters" label="Parameters">
-    | Parameter   | Description                                                                 |
-    | ----------- | --------------------------------------------------------------------------- |
-    | token       | **String** - Player's token on the merchant's side                          |
-    | amount      | **Number** - Amount to be added to the player's wallet                 |
+    | Parameter      | Description                                                                 |
+    | ---------------| --------------------------------------------------------------------------- |
+    | uyser_id       | **String** - Player's id on the operator's side                          |
+    | amount         | **Number** - Amount to be added to the player's wallet                 |
   </TabItem>
   
   <TabItem value="example" label="Example">
 
     ```json
     {
-      "token": "0ae4b6385b4a5966a5849c0d8b50202a",
+      "user_id": "123456",
       "amount": 100,
     }
 
@@ -47,20 +47,20 @@ This request is used to add a given amount to a player's wallet when a given gam
     | --------- | --------------------------------------------------------------------------------------------------- |
     | code      | **Number** - response status code                                                                       |
     | message   | **String** - response explanation                                                                       |
-    | data      | **Object** <ul><li>id - ***String*** player id</li><li>name - ***String*** player name</li><li>balance - ***Number*** player balance</li></ul> |
+    | data      | **Object** <ul><li>user_id - ***String*** player id</li> <li>old balance - ***Number*** old player balance</li> <li>new balance - ***Number*** new player balance</li></ul>|
 
   </TabItem>
 
   <TabItem value="success" label="Success Example">
 
     ```json
-    {
+      {
         "code": 200,
         "message": "ok",
         "data": {
-            "id": "12345",
-            "name": "johndoe",
-            "balance": 1000
+            "user_id": "123456",
+            "new_balance": 1000,
+            "old_balance": 1100,
         }
     }
     ```
@@ -72,7 +72,7 @@ This request is used to add a given amount to a player's wallet when a given gam
     ```json
     {
         "code": 401,
-        "message": "Invalid token",
+        "message": "Invalid user",
         "data": {}
     }
     ```

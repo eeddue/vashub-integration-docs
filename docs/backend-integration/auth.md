@@ -7,7 +7,7 @@ import TabItem from '@theme/TabItem';
 
 # Authentication
 
-This request is sent to merchant's callback url to authenticate the user in the game
+This request is sent to operators's callback url to authenticate the user in the game
 
 | path    | **`/auth`**     |
 | ------- | --------------- |
@@ -20,14 +20,14 @@ This request is sent to merchant's callback url to authenticate the user in the 
   <TabItem value="parameters" label="Parameters">
     | Parameter   | Description |
     | ------ | ------- |
-    | user_token | **String** - Player's token on the merchant's side  |
+    | user_token | **String** - Player's token on the operators's side  |
   </TabItem>
   
   <TabItem value="example" label="Example">
 
     ```json
     {
-      "token": "0ae4b6385b4a5966a5849c0d8b50202a"
+      "user_token": "0ae4b6385b4a5966a5849c0d8b50202a"
     }
 
     ```

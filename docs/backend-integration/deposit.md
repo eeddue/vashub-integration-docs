@@ -5,11 +5,11 @@ sidebar_position: 5
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# Add
+# Deposit
 
-This request is used to add a given amount to a player's wallet
+This request is used to deposit a given amount from a player's wallet
 
-| path    | **`/add`**      |
+| path    | **`/deposit`**  |
 | ------- | --------------- |
 | method  | **`POST`**      |
 | headers | **`x-api-key`** |
@@ -18,20 +18,20 @@ This request is used to add a given amount to a player's wallet
 
 <Tabs>
   <TabItem value="parameters" label="Parameters">
-    | Parameter   | Description                                                                 |
-    | ----------- | --------------------------------------------------------------------------- |
-    | token       | **String** - Player's token on the merchant's side                          |
-    | amount      | **Number** - Amount to be added to the player's wallet                 |
-    | action      | **`win`** / **`claim-rain`** / **`free-bet`** - Reason for amount addition  |
+    | Parameter   | Description                                                        |
+    | ----------- | ------------------------------------------------------------------ |
+    | user_id       | **String** - Player's id on the operator's side                 |
+    | amount      | **Number** - Amount to be deposited to the player's wallet        |
+    | action      | **`win`** / **`claim-rain`** / **`free-bet`** - Reason for amount depositing  |
   </TabItem>
   
   <TabItem value="example" label="Example">
 
     ```json
     {
-      "token": "6ae4b6385b4a5966a5849c0d8b50202a",
+      "user_id": "123456",
       "amount": 100,
-      "action": "win"
+      "action": "bet"
     }
 
     ```
@@ -49,7 +49,7 @@ This request is used to add a given amount to a player's wallet
     | --------- | --------------------------------------------------------------------------------------------------- |
     | code      | **Number** - response status code                                                                       |
     | message   | **String** - response explanation                                                                       |
-    | data      | **Object** <ul><li>id - ***String*** player id</li><li>name - ***String*** player name</li><li>balance - ***Number*** player balance</li></ul> |
+    | data      | **Object** <ul><li>user_id - ***String*** player id</li> <li>old balance - ***Number*** old player balance</li> <li>new balance - ***Number*** new player balance</li></ul>|
 
   </TabItem>
 
@@ -60,9 +60,9 @@ This request is used to add a given amount to a player's wallet
         "code": 200,
         "message": "ok",
         "data": {
-            "id": "12345",
-            "name": "johndoe",
-            "balance": 1000
+            "user_id": "123456",
+            "new_balance": 1000,
+            "old_balance": 1100,
         }
     }
     ```
@@ -74,7 +74,7 @@ This request is used to add a given amount to a player's wallet
     ```json
     {
         "code": 401,
-        "message": "Invalid token",
+        "message": "Invalid user",
         "data": {}
     }
     ```

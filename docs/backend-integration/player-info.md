@@ -20,14 +20,14 @@ This request is used to request for player details.
   <TabItem value="parameters" label="Parameters">
     | Parameter   | Description |
     | ------ | ------- |
-    | token | **String** - Player's token on the merchant's side  |
+    | user_id | **String** - Player's id on the operator's side  |
   </TabItem>
   
   <TabItem value="example" label="Example">
 
     ```json
     {
-      "token": "0ae4b6385b4a5966a5849c0d8b50202a"
+      "user_id": "123456"
     }
 
     ```
@@ -56,8 +56,8 @@ This request is used to request for player details.
         "code": 200,
         "message": "ok",
         "data": {
-            "id": "12345",
-            "name": "johndoe",
+            "user_id": "12345",
+            "username": "johndoe",
             "balance": 1000
         }
     }
@@ -70,7 +70,7 @@ This request is used to request for player details.
     ```json
     {
         "code": 401,
-        "message": "Invalid user token",
+        "message": "Invalid user",
         "data": {}
     }
     ```

@@ -9,11 +9,14 @@ import styles from "./index.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
+  const is_xploora = location.origin.includes("xploora");
+  const title = is_xploora ? siteConfig.title.replace("Vas Hub", "Xploora") : siteConfig.title;
+
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
       <div className="container">
         <Heading as="h1" className="hero__title">
-          {siteConfig.title}
+          {title}
         </Heading>
 
         <p className="hero__subtitle">{siteConfig.tagline}</p>
