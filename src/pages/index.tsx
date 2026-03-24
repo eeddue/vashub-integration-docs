@@ -2,15 +2,18 @@ import clsx from "clsx";
 import Layout from "@theme/Layout";
 import Link from "@docusaurus/Link";
 import Heading from "@theme/Heading";
-import type { ReactNode } from "react";
+import { useMemo, type ReactNode } from "react";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 
 import styles from "./index.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
-  const is_xploora = location.origin.includes("xploora");
-  const title = is_xploora ? siteConfig.title.replace("Vas Hub", "Xploora") : siteConfig.title;
+
+  const title = useMemo(() => {
+    const is_xploora = location.origin.includes("xploora");
+    return is_xploora ? siteConfig.title.replace("Vas Hub", "Xploora") : siteConfig.title;
+  }, []);
 
   return (
     <header className={clsx("hero hero--primary", styles.heroBanner)}>
