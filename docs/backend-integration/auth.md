@@ -20,7 +20,7 @@ This request is sent to merchant's callback url to authenticate the user in the 
   <TabItem value="parameters" label="Parameters">
     | Parameter   | Description |
     | ------ | ------- |
-    | token | **String** - Player's token on the merchant's side  |
+    | user_token | **String** - Player's token on the merchant's side  |
   </TabItem>
   
   <TabItem value="example" label="Example">
@@ -56,8 +56,8 @@ This request is sent to merchant's callback url to authenticate the user in the 
         "code": 200,
         "message": "ok",
         "data": {
-            "id": "12345",
-            "name": "johndoe",
+            "user_id": "12345",
+            "username": "johndoe",
             "balance": 1000
         }
     }
