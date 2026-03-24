@@ -10,7 +10,7 @@ import styles from "./index.module.css";
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
 
-  const [title, setTitle] = useState(siteConfig.title);
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
     const is_xploora = location.origin.includes("xploora");
