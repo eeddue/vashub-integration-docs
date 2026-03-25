@@ -10,9 +10,12 @@ To launch a game, an online casino should generate launch link with appropriate 
 
 ```json
 {
-  "operator": "The provider id provided by us",
-  "token": "The players's token from the casino's side",
   "game": "aviator-next" | "avionix" | "crash-arena" | "tower"| "mines" | "classic-dice" | "hash-dice" | "limbo" | "wheel",
+  "operator": "operator key name provided by us",
+  "user" : "ID of a player on the operators side",
+  "lang": "Game interface language",
+  "currency" : "Game currency (currency code)",
+  "token": "The players's token from the casino's side",
   "return_url": "URL to redirect a player from the game",
 }
 ```
@@ -20,11 +23,11 @@ To launch a game, an online casino should generate launch link with appropriate 
 The above parameters are passed to the game's launch url as below;
 
 ```
-  https://{game}.spribegaming.live/?operator={operator}&token={token}&return_url={return_url}
+  https://{game}.spribegaming.live/?operator={operator}&user={user_id}&token={token}&lang={lang}&currency={currency}&return_url={return_url}
 ```
 
 Example launch url;
 
 ```
-  https://aviator-next.spribegaming.live/?operator=vashub&token=4512bb329301b0842eae1c4e5441d1909eb7108ee79a09a07f64ee86fa318e09&return_url=https://abccasino.com
+   https://aviator-next.spribegaming.live/?operator=demo&user=12345678&token=5af5ed1f4651218c13d3d8ebdbe2150f755de2b71de39409&lang=EN&currency=KES&return_url=123casino.com
 ```
