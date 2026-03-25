@@ -5,9 +5,9 @@ import { themes as prismThemes } from "prism-react-renderer";
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: "Vas Hub Games Integration Guide",
+  title: "Xploora Games Integration Guide",
   tagline: "Integrate our games into your website or casino in quick easy steps",
-  favicon: "img/favicon.png",
+  favicon: "img/logo_xploora.png",
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
   future: {
@@ -23,7 +23,7 @@ const config: Config = {
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
   organizationName: "eeddue", // Usually your GitHub org/user name.
-  projectName: "vashub-docs", // Usually your repo name.
+  projectName: "xploora-docs", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -72,7 +72,7 @@ const config: Config = {
       title: "",
       logo: {
         alt: "Home",
-        src: "img/logo.png",
+        src: "img/logo_xploora.png",
       },
       items: [
         {
@@ -113,7 +113,7 @@ const config: Config = {
       //     ],
       //   },
       // ],
-      copyright: `Copyright © ${new Date().getFullYear()} Vas Hub`,
+      copyright: `Copyright © ${new Date().getFullYear()} Xploora`,
     },
     prism: {
       theme: prismThemes.github,
