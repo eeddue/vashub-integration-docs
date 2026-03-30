@@ -2,7 +2,7 @@
 sidebar_position: 6
 ---
 
-# Secure Api Requests
+# Api Requests Validation
 
 To maintain secure and verified communication between systems, all requests made between our API and operators must adhere to the following security requirements. The specifics below outline how requests should be validated, whether initiated by the API or the operator.
 
