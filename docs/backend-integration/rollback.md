@@ -9,11 +9,11 @@ import TabItem from '@theme/TabItem';
 
 This method rollbacks transaction with provider transaction ID.
 
-| path         | **`/rollback`**                                                                 |
-| ------------ | ------------------------------------------------------------------------------- |
-| method       | **`POST`**                                                                      |
-| Content-Type | **`application/json`**                                                          |
-| headers      | **`X-Api-Key`**, **`X-Client-Id`**, **`X-Client-TS`**, **`X-Client-Signature`** |
+| path         | **`/rollback`**                                                |
+| ------------ | -------------------------------------------------------------- |
+| method       | **`POST`**                                                     |
+| Content-Type | **`application/json`**                                         |
+| headers      | **`X-Client-Id`**, **`X-Client-TS`**, **`X-Client-Signature`** |
 
 ### Request
 

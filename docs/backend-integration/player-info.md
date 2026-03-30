@@ -9,11 +9,11 @@ import TabItem from '@theme/TabItem';
 
 This request is used to request for player details.
 
-| path         | **`/info`**                                                                     |
-| ------------ | ------------------------------------------------------------------------------- |
-| method       | **`POST`**                                                                      |
-| Content-Type | **`application/json`**                                                          |
-| headers      | **`X-Api-Key`**, **`X-Client-Id`**, **`X-Client-TS`**, **`X-Client-Signature`** |
+| path         | **`/info`**                                                    |
+| ------------ | -------------------------------------------------------------- |
+| method       | **`POST`**                                                     |
+| Content-Type | **`application/json`**                                         |
+| headers      | **`X-Client-Id`**, **`X-Client-TS`**, **`X-Client-Signature`** |
 
 ### Request
 

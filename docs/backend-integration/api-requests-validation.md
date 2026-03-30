@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # Api Requests Validation
@@ -9,6 +9,14 @@ To maintain secure and verified communication between systems, all requests made
 ### Security Requirements for API Requests
 
 For requests originating from our API to operators, operators should validate each incoming request by checking the following headers. Similarly, operators should add these headers to requests they initiate to our API.
+
+### Required Headers for Request Validation
+
+Each secured request must contain the following headers:
+
+1. `X-Client-ID`: A unique identifier for the operator, provided by us.
+2. `X-Client-TS`: A timestamp in UTC, representing seconds since the Unix Epoch.
+3. `X-Client-Signature`: A hashed signature that verifies the integrity of the request parameters.
 
 ### Generating the X-Client-signature Header
 
