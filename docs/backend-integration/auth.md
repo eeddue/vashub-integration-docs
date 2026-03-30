@@ -9,10 +9,11 @@ import TabItem from '@theme/TabItem';
 
 This request is sent to operators's callback url to authenticate the user in the game
 
-| path    | **`/auth`**     |
-| ------- | --------------- |
-| method  | **`POST`**      |
-| headers | **`x-api-key`** |
+| path         | **`/auth`**                                                                     |
+| ------------ | ------------------------------------------------------------------------------- |
+| method       | **`POST`**                                                                      |
+| Content-Type | **`application/json`**                                                          |
+| headers      | **`X-Api-Key`**, **`X-Client-Id`**, **`X-Client-TS`**, **`X-Client-Signature`** |
 
 ### Request
 

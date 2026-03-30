@@ -9,10 +9,11 @@ import TabItem from '@theme/TabItem';
 
 This request is used to withdraw a given amount from a player's wallet
 
-| path    | **`/withdraw`** |
-| ------- | --------------- |
-| method  | **`POST`**      |
-| headers | **`x-api-key`** |
+| path         | **`/withdraw`**                                                                 |
+| ------------ | ------------------------------------------------------------------------------- |
+| method       | **`POST`**                                                                      |
+| Content-Type | **`application/json`**                                                          |
+| headers      | **`X-Api-Key`**, **`X-Client-Id`**, **`X-Client-TS`**, **`X-Client-Signature`** |
 
 ### Request
 
