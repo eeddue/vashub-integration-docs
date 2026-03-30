@@ -34,3 +34,33 @@ Upon receiving a request, the server (operator's or ours) should validate the X-
 1. Retrieving the Client Secret based on X-Client-ID.
 2. Repeating the signature creation process using the headers and parameters.
 3. Comparing the generated signature to the received X-Client-Signature header. A match indicates the request is verified.
+
+### Example Implementation for Incoming API Requests
+
+Below is an example illustrating how to implement secure request handling on the operator's side or ours:
+
+```ts
+const crypto = require("crypto");
+
+app.post("/your-endpoint", (req, res) => {
+  const clientId = req.headers["x-client-id"] || "not set";
+  const clientTs = req.headers["x-client-ts"] || "not set";
+  const clientSig = req.headers["x-client-signature"] || "not set";
+
+  //body
+  const dataJson = JSON.stringify(req.body);
+
+  //validation setup
+  const operatorKey = "OPERATOR_KEY_PROVIDED";
+  const requestUri = req.originalUrl;
+  const validateData = clientTs + requestUri + dataJson;
+
+  const localSig = crypto.createHmac("sha256", operatorKey).update(validateData).digest("hex");
+
+  if (clientSig !== localSig) {
+    return res.status(413).send("Invalid Client-Signature");
+  }
+
+  // Success logic here...
+});
+```
